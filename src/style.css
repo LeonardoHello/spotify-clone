@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#root {
+  font-family: 'Arial';
+  display: grid;
+  grid-template-rows: 6rem 1fr;
+  align-content: flex-start;
+  height: 100vh;
+  min-width: 27.5rem;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+#login {
+  all: unset;
+  position: absolute;
+  padding: .8em;
+  font-size: 1.8rem;
+  color: white;
+  background-color: rgb(40, 186, 0);
+  border-radius: .7rem;
+  cursor: pointer;
+  align-self: center;
+  justify-self: center;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+#se {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: .5rem;
+  align-self: flex-start;
+  min-height: 2rem;
+}
+
+#se::placeholder {
+  color: rgb(191, 191, 191);
+}
+
+#songs {
+  display: flex;
+  flex-direction: column;
+  padding: 0 .5rem;
+  gap: 1rem;
+}
+
+#song-search {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#artist {
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+ul {
+  font-size: 1.6rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+ul li:last-of-type {
+  font-size: 1.4rem;
+  color: rgb(73, 73, 73);
+}
+
+#btns {
+  display: flex;
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  color: rgb(73, 73, 73);
+  min-height: 3rem;
+  gap: 1rem;
+  padding: 0 .5rem;
+  justify-content: space-between;
+}
+
+.btn {
+  all: unset;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  text-align: center;
+  width: 11rem;
+  border-radius: .3rem;
+  cursor: pointer;
+}
+
+.PlayerRSWP {
+  justify-self: flex-end;
+  margin-top: 3rem;
+}
+
+pre {
+  text-align: center;
+  font-size: 1.8rem;
+  overflow-y: scroll;
+}
+
+p {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+}
