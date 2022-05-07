@@ -2,7 +2,7 @@
   "name": "spotify-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://myusername.github.io/react-spotify-clone",
+  "homepage": "https://github.com/LeonardoHello/react-spotify-clone",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
