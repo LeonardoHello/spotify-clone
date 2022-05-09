@@ -15,7 +15,7 @@ const useAuth = (code) => {
       window.history.pushState({}, null, '/')
     })
     .catch(() => {
-      window.location = '/'
+      window.location = 'react-spotify-app/'
     })
   }, [code])
 
@@ -29,7 +29,7 @@ const useAuth = (code) => {
           setExpiresIn(res.data.expiresIn);
         })
         .catch(() => {
-          window.location = '/'
+          window.location = 'react-spotify-app/'
         })
       }
     }, (expiresIn - 60) * 1000)

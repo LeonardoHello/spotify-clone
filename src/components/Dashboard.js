@@ -84,7 +84,6 @@ const Dashboard = ({ code }) => {
         }
       })
       const responseJson = await response.json();
-      console.log(responseJson.tracks);
       setcurrentPage(responseJson.tracks.offset / 20)
       setPages(Math.floor(responseJson.tracks.total / 20))
       return responseJson;
