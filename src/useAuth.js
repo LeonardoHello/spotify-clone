@@ -12,7 +12,7 @@ const useAuth = (code) => {
       setAccessToken(res.data.accessToken);
       setRefreshToken(res.data.refreshToken);
       setExpiresIn(res.data.expiresIn);
-      window.history.pushState({}, null, '/')
+      window.history.pushState({}, null, '/react-spotify-app')
     })
     .catch(() => {
       window.location = 'react-spotify-app/'
@@ -29,7 +29,7 @@ const useAuth = (code) => {
           setExpiresIn(res.data.expiresIn);
         })
         .catch(() => {
-          window.location = 'react-spotify-app/'
+          window.location = '/react-spotify-app'
         })
       }
     }, (expiresIn - 60) * 1000)
