@@ -12,12 +12,12 @@ const useAuth = (code) => {
       setAccessToken(res.data.accessToken);
       setRefreshToken(res.data.refreshToken);
       setExpiresIn(res.data.expiresIn);
-      window.history.pushState({}, null, '/react-spotify-app')
+      window.history.pushState({}, null, '/')
     })
     .catch(() => {
-      window.location = 'react-spotify-app/'
+      window.location = '/'
     })
-  }, [code])
+  }, [])
 
   useEffect(() => {
     if (!refreshToken || !expiresIn) return
@@ -29,7 +29,7 @@ const useAuth = (code) => {
           setExpiresIn(res.data.expiresIn);
         })
         .catch(() => {
-          window.location = '/react-spotify-app'
+          window.location = '/'
         })
       }
     }, (expiresIn - 60) * 1000)
