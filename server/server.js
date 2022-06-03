@@ -4,8 +4,18 @@ const querystring = require('querystring');
 const cors = require('cors');
 const lyricsFinder = require('lyrics-finder');
 const axios = require('axios');
+const path = require('path');
 const app = express();
 app.use(cors())
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, (err) => {
+  if (err) return console.log(err);
+  console.log(`Server running on port ${PORT}`)
+});
+
+app.use(express.static(path.join(__dirname, '..', 'build')));
 
 const CLIENT_ID = process.env.client_id;
 const CLIENT_SECRET = process.env.client_secret;
@@ -58,5 +68,3 @@ app.get('/lyrics', async (req, res) => {
   const lyrics = await lyricsFinder(req.query.artist, req.query.title) || "No Lyrics Found!";
   res.json({ lyrics })
 })
-
-app.listen(3001)
