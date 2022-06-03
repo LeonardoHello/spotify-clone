@@ -20,8 +20,6 @@ app.listen(PORT, (err) => {
   console.log(`Server running on port ${PORT}`)
 });
 
-
-
 app.get('/login', (req, res) => {
   const code = req.query.code;
 
@@ -71,5 +69,5 @@ app.get('/lyrics', async (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
-})
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
