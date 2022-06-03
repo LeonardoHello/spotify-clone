@@ -17,6 +17,10 @@ app.listen(PORT, (err) => {
 
 app.use(express.static(path.join(__dirname, '..', 'build')));
 
+app.get('./*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'))
+})
+
 const CLIENT_ID = process.env.client_id;
 const CLIENT_SECRET = process.env.client_secret;
 const REDIRECT_URI = process.env.redirect_uri;
