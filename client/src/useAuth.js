@@ -14,7 +14,7 @@ const useAuth = (code) => {
       setExpiresIn(res.data.expiresIn);
     })
     .catch((err) => console.log(err))
-  }, [])
+  }, [code])
 
   useEffect(() => {
     if (!refreshToken || !expiresIn) return

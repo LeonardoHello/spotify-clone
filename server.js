@@ -22,7 +22,7 @@ app.listen(PORT, (err) => {
 
 app.get('/login', (req, res) => {
   const code = req.query.code;
-
+  res.send('HELLO FROM LOOOOGIN')
   axios({
     method: 'post',
     url: 'https://accounts.spotify.com/api/token',
@@ -44,6 +44,9 @@ app.get('/login', (req, res) => {
 
 app.get('/refresh', (req, res) => {
   const refreshToken = req.query.refresh_token
+  
+  res.send('HELLO FROM REFREEEESH')
+
   axios({
     method: 'post',
     url: 'https://accounts.spotify.com/api/token',
