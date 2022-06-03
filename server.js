@@ -6,20 +6,26 @@ const lyricsFinder = require('lyrics-finder');
 const axios = require('axios');
 const path = require('path');
 const app = express();
-app.use(cors())
+app.use(cors());
+
+
+
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 const PORT = process.env.PORT || 5000;
+const CLIENT_ID = process.env.client_id;
+const CLIENT_SECRET = process.env.client_secret;
+const REDIRECT_URI = process.env.redirect_uri;
 
 app.listen(PORT, (err) => {
   if (err) return console.log(err);
   console.log(`Server running on port ${PORT}`)
 });
 
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.get('/code', (req, res) => {
+  res.json(PORT)
+})
 
-const CLIENT_ID = process.env.client_id;
-const CLIENT_SECRET = process.env.client_secret;
-const REDIRECT_URI = process.env.redirect_uri;
 
 app.get('/login', (req, res) => {
   const code = req.query.code;

@@ -7,7 +7,7 @@ const useAuth = (code) => {
   const [expiresIn, setExpiresIn] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/login?code=${code}`)
+    axios.get(`https://spotify-clone-react-project.herokuapp.com/login?code=${code}`)
     .then(res => {
       setAccessToken(res.data.accessToken);
       setRefreshToken(res.data.refreshToken);
@@ -23,7 +23,7 @@ const useAuth = (code) => {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
       if (refreshToken !== undefined) {
-        axios.get(`http://localhost:5000/refresh?refresh_token=${refreshToken}`)
+        axios.get(`https://spotify-clone-react-project.herokuapp.com/refresh?refresh_token=${refreshToken}`)
         .then(res => {
           setAccessToken(res.data.accessToken);
           setExpiresIn(res.data.expiresIn);
