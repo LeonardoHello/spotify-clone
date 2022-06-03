@@ -70,3 +70,7 @@ app.get('/lyrics', async (req, res) => {
   const lyrics = await lyricsFinder(req.query.artist, req.query.title) || "No Lyrics Found!";
   res.json({ lyrics })
 })
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+})
