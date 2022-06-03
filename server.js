@@ -8,8 +8,6 @@ const path = require('path');
 const app = express();
 app.use(cors());
 
-
-
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 const PORT = process.env.PORT || 5000;
@@ -21,11 +19,6 @@ app.listen(PORT, (err) => {
   if (err) return console.log(err);
   console.log(`Server running on port ${PORT}`)
 });
-
-app.get('/code', (req, res) => {
-  res.json(PORT)
-})
-
 
 app.get('/login', (req, res) => {
   const code = req.query.code;
