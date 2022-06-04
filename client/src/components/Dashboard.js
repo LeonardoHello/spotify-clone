@@ -68,7 +68,7 @@ const Dashboard = ({ code }) => {
   useEffect(() => {
     if (sessionStorage.getItem('info') === null || info === '') return 
     const gettingLyrics = async () => {
-      const response = await fetch(`https://spotify-clone-react-project.herokuapp.com/lyrics?${info}`)
+      const response = await fetch(`/lyrics?${info}`)
       const jsonResponse = await response.json()
       setLyircs(jsonResponse.lyrics)
     }
