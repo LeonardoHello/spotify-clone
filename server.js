@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'client', 'build')));
 const PORT = process.env.PORT || 5000;
 const CLIENT_ID = process.env.client_id;
 const CLIENT_SECRET = process.env.client_secret;
-const REDIRECT_URI = process.env.redirect_uri;
+const REDIRECT_URI = 'http://localhost:5000/';
 
 app.listen(PORT, (err) => {
   if (err) return console.log(err);
@@ -66,4 +66,8 @@ app.get('/refresh', (req, res) => {
 app.get('/lyrics', async (req, res) => {
   const lyrics = await lyricsFinder(req.query.artist, req.query.title) || "No Lyrics Found!";
   res.json({ lyrics })
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 })
